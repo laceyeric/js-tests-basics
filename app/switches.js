@@ -8,43 +8,84 @@
 
 function daysPosition(day, offset) {
     // debugger
-    var output;
-    (day) = day.toLowerCase();
-    switch (day, offset) {
-        case 'sunday', false:
-        case 'monday', true:
-            output = 1;
+    let days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+    day = day.toLowerCase();
+    if (!offset) {
+        days.unshift(days.pop())
+    }
+    switch (day) {
+        case 'sunday':
+            return days.indexOf(day) + 1;
             break;
-        case 'monday', false:
-        case 'tuesday', true:
-            output = 2;
+        case 'monday':
+            return days.indexOf(day) + 1;
             break;
-        case ('tuesday', false):
-        case ('wednesday', true):
-            output = 3;
+        case 'tuesday':
+            return days.indexOf(day) + 1;
             break;
-        case ('wednesday', false):
-        case ('thursday', true):
-            output = 4;
+        case 'wednesday':
+            return days.indexOf(day) + 1;
             break;
-        case ('thursday', false):
-        case ('friday', true):
-            output = 5;
+        case 'thursday':
+            return days.indexOf(day) + 1;
             break;
-        case ('friday', false):
-        case ('saturday', true):
-            output = 6;
+        case 'friday':
+            return days.indexOf(day) + 1;
             break;
-        case ('saturday', false):
-        case ('sunday', true):
-            output = 7;
+        case 'saturday':
+            return days.indexOf(day) + 1;
             break;
         default:
-            output = "That's not a day of the week";
-
-            return output;
+            return "That's not a day of the week"
     }
 }
+
+
+
+
+
+//     var output;
+//     day = day.toLowerCase();
+//     if (offset) {
+//         offset = true;
+//     } else {
+//         offset = false;
+//     }
+//     switch (day, offset) {
+//         case 'sunday', false:
+//         case 'monday', true:
+//             output = 1;
+//             break;
+//         case 'monday', false:
+//         case 'tuesday', true:
+//             output = 2;
+//             break;
+//         case ('tuesday', false):
+//         case ('wednesday', true):
+//             output = 3;
+//             break;
+//         case ('wednesday', false):
+//         case ('thursday', true):
+//             output = 4;
+//             break;
+//         case ('thursday', false):
+//         case ('friday', true):
+//             output = 5;
+//             break;
+//         case ('friday', false):
+//         case ('saturday', true):
+//             output = 6;
+//             break;
+//         case ('saturday', false):
+//         case ('sunday', true):
+//             output = 7;
+//             break;
+//         default:
+//             output = "That's not a day of the week";
+
+//             return output;
+//     }
+// }
 
 //         case day.toLowerCase() = 'sunday' && offset.toLowerCase() == false:
 //         case day.toLowerCase() = 'monday' && offset.toLowerCase() == true:
