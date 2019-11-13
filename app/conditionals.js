@@ -62,7 +62,14 @@ function timeOfDayGreeting(hour) {
 
 //4. Write a function that will take in a number and return 'fever' if it indicates a fever (over 98.6) and additionally if the person should go to the hospital (at or above 103) 'fever go to hospital' (hint: try this with string concatenation), if it is under return 'no fever'
 function isFever(temp) {
-
+    var message = (temp >= 98.61) ? "fever" : "no fever";
+    var message2;
+    if (temp >= 103) {
+        message2 = 'go to hospital';
+        return message.concat(" ", message2);
+    } else {
+        return message;
+    }
 }
 
 //5. Write a function that takes in a car object, if it is not moving then return true
