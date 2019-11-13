@@ -1,9 +1,17 @@
 //1. Given two numbers, write a function that will return  the larger number
 
-function largerNum(num1, num2) {
-    // you code here
+// function largerNum(num1, num2) {
+//     if (num1 >= num2) {
+//         return num1;
+//     } else {
+//         return num2;
+//     }
+// }
 
+function largerNum(num1, num2) {
+    return Math.max(num1, num2);
 }
+
 
 // 2. Given two numbers, amount correct and amount possible of a test, return the corresponding letter grade.
 // Example: 
@@ -14,7 +22,17 @@ function largerNum(num1, num2) {
 // output: "F"
 
 function testGrader(score, possible) {
-
+    if (score / possible <= .6) {
+        return 'F';
+    } else if ((score / possible >= .6) && (score / possible < .7)) {
+        return 'D';
+    } else if ((score / possible >= .7) && (score / possible < .8)) {
+        return 'C';
+    } else if ((score / possible >= .8) && (score / possible < .9)) {
+        return 'B';
+    } else {
+        return 'A';
+    }
 }
 
 
@@ -29,8 +47,17 @@ function testGrader(score, possible) {
 //Make sure your ranges are inclusive
 
 function timeOfDayGreeting(hour) {
-    // you code below
-
+    var greeting;
+    if ((hour >= 22) || (hour <= 4)) {
+        greeting = 'good night';
+    } else if ((hour >= 5) && (hour <= 11)) {
+        greeting = 'good morning';
+    } else if ((hour >= 12) && (hour <= 17)) {
+        greeting = 'good afternoon';
+    } else {
+        greeting = 'good evening';
+    }
+    return greeting;
 }
 
 //4. Write a function that will take in a number and return 'fever' if it indicates a fever (over 98.6) and additionally if the person should go to the hospital (at or above 103) 'fever go to hospital' (hint: try this with string concatenation), if it is under return 'no fever'
