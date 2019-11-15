@@ -7,7 +7,6 @@
 // output: 7
 
 function daysPosition(day, offset) {
-    // debugger
     let days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
     day = day.toLowerCase();
     if (!offset) {
@@ -51,7 +50,7 @@ function daysPosition(day, offset) {
 //     } else {
 //         offset = false;
 //     }
-//     switch (day, offset) {
+//     switch (day + offset) {
 //         case 'sunday', false:
 //         case 'monday', true:
 //             output = 1;
@@ -132,8 +131,32 @@ function daysPosition(day, offset) {
  */
 
 function golfScore(score, par) {
-
+    let num = (score - par);
+    if (score == 1) {
+        return "Ace";
+    }
+    switch (num) {
+        case -3:
+        case -2:
+            return "Eagle";
+            break;
+        case -1:
+            return "Birdie";
+            break;
+        case 0:
+            return "par";
+            break;
+        case 1:
+            return "Bogie";
+            break;
+        case 2:
+            return "Double Bogie";
+            break;
+        default:
+            return "Ouch";
+    }
 }
+
 
 
 // --------------------------------------------
@@ -154,8 +177,28 @@ function golfScore(score, par) {
 // Example:
 // output: '2 Bet'
 
-let count = 0
+let count = 0;
 
 function cardCounter(card) {
-
+    switch (card) {
+        case '2':
+        case '3':
+        case '4':
+        case '5':
+        case '6':
+            count++;
+            break;
+        case '7':
+        case '8':
+        case '9':
+            break;
+        case '10':
+        case 'J':
+        case 'Q':
+        case 'K':
+        case 'A':
+            count--;
+            break;
+    }
+    return (count > 0) ? count + " Bet" : count + " Hold";
 }

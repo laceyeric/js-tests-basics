@@ -28,8 +28,11 @@ let cat = {
 // Write a function that uses bracket notation to change the cat's name from 
 // "Pickles" to "Kevin".Then use either dot or bracket notation to return 
 // the value of the name property.
-function renameCat() {
-  // your code inside here
+function renameCat(oldName) {
+  let newName = "Kevin";
+  if (oldName == cat[name]) {
+    return cat.name[newName];
+  }
 }
 
 // Create a function that uses dot or bracket notation to create a property 
